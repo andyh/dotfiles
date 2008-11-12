@@ -1,0 +1,12 @@
+# Ignore everything then only stop ignoring files I'm interested in - i.e. the dotfiles
+
+*
+!.autotest
+!.autotest_images/*
+!.bashrc
+!.bash_login
+!.caprc
+!.gemrc
+!.gitconfig
+!.gitignore
+!.profile

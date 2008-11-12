@@ -1,0 +1,23 @@
+# .caprc - Capistrano configs (added by deprec gem [www.deprec.org])
+#
+# Include settings that you want active whenever you use Capistrano
+# You can over ride these for particular projects by putting entries
+# into Capfile or deploy.rb for those projects
+#
+# Uncomment any of the following entries to enable them.
+#
+# Include deprec - deployment recipes for Capistrano (www.deprec.org)
+#
+require 'deprec'
+#
+# SSH options
+#
+# Use ssh keys instead of typing password every time
+# Replace with the path to your ssh public key
+ssh_options[:keys] = %w(/Users/andy/.ssh/id_rsa)
+#
+# Allow ssh keys to be forwarded (to scm server, through :gateway, etc) 
+ssh_options[:forward_agent] = true 
+#
+# Stop some annoying warnings
+ssh_options[:paranoid] = false

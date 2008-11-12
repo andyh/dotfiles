@@ -1,0 +1,31 @@
+require 'autotest/redgreen'  
+
+module Autotest::Growl
+  
+  def self.growl title, msg, img, pri=0, sticky=""
+    system "growlnotify -H localhost -n autotest --image #{img} -p #{pri} -m #{msg.inspect} #{title} #{sticky}"
+  end
+
+  Autotest.add_hook :ran_command do |at|
+    image_root = "~/.autotest_images/"
+    
+    
+    results = [at.results].flatten.join("\n")
+    output = results.slice(/(\d+)\s+examples?,\s*(\d+)\s+failures?(,\s*(\d+)\s+pending)?/)
+    if output
+      if $~[2].to_i > 0
+        growl "Test Results", "#{output}", "#{image_root}fail.png", 2
+      # elsif $~[3].to_i > 0
+      elsif $~[4].to_i > 0
+        growl "Test Results", "#{output}", "#{image_root}pending.png", 0
+      else
+        growl "Test Results", "#{output}", "#{image_root}pass.png", 0
+      end
+    end
+  end
+    
+end
+ 
+Autotest.add_hook :initialize do |at|  
+    %w{.svn .hg .git vendor}.each {|exception| at.add_exception(exception)}  
+end

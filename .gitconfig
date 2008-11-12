@@ -1,0 +1,7 @@
+[user]
+	name = Andy Henson
+	email = andrew.henson@foxsoft.net
+[color]
+	diff = auto
+	status = auto
+	branch = auto
