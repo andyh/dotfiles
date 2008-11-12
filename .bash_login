@@ -12,6 +12,11 @@ export SVN_EDITOR='mate -w'
 # export DYLD_LIBRARY_PATH=/Users/andy/ImageMagick-6.3.4/lib
 alias ls="ls -laG"
 
+alias gc="git commit"
+alias ga="git add"
+alias gst="git status"
+alias gdiff="git diff"
+
 parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
