@@ -30,3 +30,6 @@ prompter() {
 }
 
 prompter
+
+source ~/.tabtab.bash
+source ~/.bash-git-completion.sh

@@ -10,3 +10,5 @@
 !.gitconfig
 !.gitignore
 !.profile
+!.tabtab.bash
+!.bash-git-completion.sh
