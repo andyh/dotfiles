@@ -6,3 +6,4 @@ export LC_CTYPE=en_US.UTF-8
 export EDITOR='mate -w'
 export SVN_EDITOR='mate -w'
 alias ls="ls -laG"
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset — %s %Cgreen(%cr)%Creset" --abbrev-commit --date=relative'
