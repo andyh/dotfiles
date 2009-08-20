@@ -4,18 +4,24 @@ These are my dotfiles to set up my system the way I like it.
 
 h2. Installation
 
+<pre>
+	<code>
 	git clone git://github.com/andyh/dotfiles.git ~/.dotfiles
 	cd ~/.dotfiles
 	rake install
+	</code>
+</pre>
 	
 Then edit to suit your needs.
 
 Note that I use Mac OS X and bash
 
-Requires DrNic's tabtab gem
+Requires DrNic's tabtab gem to be installed (_don't forget to run @install_tabtab@_)
 
 h3. Mategem
 
+<pre>
+<code>	
   #!/bin/sh
   
   usage()
@@ -28,10 +34,12 @@ h3. Mategem
   
   [ -z "$GEM" ] && usage
   mate "$(gem environment gemdir)/gems/$GEM"
+</code>
+</pre>
 
 Then make it executable:
 
-  chmod +x /usr/local/bin/mategem
+  @chmod +x /usr/local/bin/mategem@
 
 h2. Features
 
