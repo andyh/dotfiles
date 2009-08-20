@@ -12,7 +12,31 @@ Then edit to suit your needs.
 
 Note that I use Mac OS X and bash
 
+Requires DrNic's tabtab gem
+
+h3. Mategem
+
+  #!/bin/sh
+  
+  usage()
+  {
+       echo "Usage: $(basename $0) <gem>" 1>&2
+       exit 1
+  }
+  
+  GEM="$1"
+  
+  [ -z "$GEM" ] && usage
+  mate "$(gem environment gemdir)/gems/$GEM"
+
+Then make it executable:
+
+  chmod +x /usr/local/bin/mategem
+
 h2. Features
 
+ * Prompts showing current branch if directory is a git repository
  * Tab completion for git commands, branches, etc
- * Aliases...
+ * Aliases for common git commands and rails (plus a few terminal shortcuts)
+ * mategem for completing  and opening gems in TextMate
+ * _authme_ command for adding servers to authorized_keys list
