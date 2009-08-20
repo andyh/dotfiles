@@ -43,6 +43,10 @@ Then make it executable:
 
   @chmod +x /usr/local/bin/mategem@
 
+h3. Autospec/Growl
+
+The growlnotify command line tool needs to be installed and the ZenTest, autotest-growl and autotest-fsevent gems.
+
 h2. Features
 
  * Prompts showing current branch if directory is a git repository
@@ -50,3 +54,4 @@ h2. Features
  * Aliases for common git commands and rails (plus a few terminal shortcuts)
  * mategem for completing  and opening gems in TextMate
  * _authme_ command for adding servers to authorized_keys list
+ * autospec/autotest growl notifications
