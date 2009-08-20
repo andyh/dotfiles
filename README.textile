@@ -1,0 +1,18 @@
+h1. Andy Henson's Dotfiles
+
+These are my dotfiles to set up my system the way I like it.
+
+h2. Installation
+
+	git clone git://github.com/andyh/dotfiles.git ~/.dotfiles
+	cd ~/.dotfiles
+	rake install
+	
+Then edit to suit your needs.
+
+Note that I use Mac OS X and bash
+
+h2. Features
+
+ * Tab completion for git commands, branches, etc
+ * Aliases...
