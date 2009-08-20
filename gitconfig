@@ -5,3 +5,9 @@
 	diff = auto
 	status = auto
 	branch = auto
+[alias]
+	co = checkout
+[core]
+	editor = mate -w
+[apply]
+	whitespace = nowarn
