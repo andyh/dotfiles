@@ -20,6 +20,8 @@ Requires DrNic's tabtab gem to be installed (_don't forget to run @install_tabta
 
 h3. Mategem
 
+Create this script in your path somewhere (_mine is in @/usr/local/bin@_)
+
 <pre>
 <code>	
   #!/bin/sh
