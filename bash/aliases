@@ -1,5 +1,8 @@
 # general
-alias ls="ls -laG"
+alias ls="ls -lahG"
+alias ..="cd .."
+alias c="cd "
+alias reload='. ~/.bash_profile'
 
 # git
 alias gc="git commit"
