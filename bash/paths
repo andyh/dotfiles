@@ -1,3 +1,8 @@
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/opt/local/bin:/Users/andy/.gem/ruby/1.8/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:/opt/local/share/man:/usr/local/git/man:$MANPATH"
 export INFOPATH=$INFOPATH:/opt/local/share/info
+
+# ImageMagick Stuff
+export MAGICK_HOME="/usr/local/ImageMagick-6.5.3"
+export PATH="$PATH:$MAGICK_HOME/bin"
+export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
