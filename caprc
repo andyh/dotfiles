@@ -6,10 +6,6 @@
 #
 # Uncomment any of the following entries to enable them.
 #
-# Include deprec - deployment recipes for Capistrano (www.deprec.org)
-#
-require 'deprec'
-#
 # SSH options
 #
 # Use ssh keys instead of typing password every time
