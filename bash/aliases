@@ -1,0 +1,17 @@
+# general
+alias ls="ls -laG"
+
+# git
+alias gc="git commit"
+alias ga="git add"
+alias gst="git status"
+alias gdiff="git diff"
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset — %s %Cgreen(%cr)%Creset" --abbrev-commit --date=relative'
+
+# rails
+alias sc='script/console'
+alias ss='script/server'
+alias sg='script/generate'
+alias a='autospec'
+alias tlog='tail -f log/development.log'
+alias rst='touch tmp/restart.txt'

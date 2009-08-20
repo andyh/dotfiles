@@ -1,0 +1,21 @@
+export LC_CTYPE=en_US.UTF-8
+export EDITOR='mate -w'
+export SVN_EDITOR='mate -w'
+
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+shopt -s histappend
+
+parse_git_branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+prompter() {
+	local RED="\[\033[0;31m\]"
+	local BLUE="\[\033[0;34m\]"
+	local NORM="\[\033[0m\]"
+
+	PS1="$BLUE\u:$NORM\w $RED\$(parse_git_branch)$NORM\$ "
+}
+
+prompter
