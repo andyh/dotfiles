@@ -1,3 +1,10 @@
+source ~/.tabtab.bash
+source ~/.bash-git-completion.sh
+
+authme() {
+	ssh $1 'cat >>.ssh/authorized_keys' <~/.ssh/id_rsa.pub
+}
+
 _mategem()
 {
     local curw
@@ -7,11 +14,5 @@ _mategem()
     COMPREPLY=($(compgen -W '$(ls $gems)' -- $curw));
     return 0
 }
+
 complete -F _mategem -o dirnames mategem
-
-function authme() {
-	ssh $1 'cat >>.ssh/authorized_keys' <~/.ssh/id_rsa.pub
-}
-
-source ~/.tabtab.bash
-source ~/.bash-git-completion.sh
