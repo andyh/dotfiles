@@ -4,5 +4,4 @@ export INFOPATH=$INFOPATH:/opt/local/share/info
 
 # ImageMagick Stuff
 export MAGICK_HOME="/usr/local/ImageMagick-6.5.3"
-export PATH="$PATH:$MAGICK_HOME/bin"
 export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
