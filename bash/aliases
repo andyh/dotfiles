@@ -3,6 +3,7 @@ alias ls="ls -lahG"
 alias ..="cd .."
 alias c="cd "
 alias reload='. ~/.bash_profile'
+alias trfile='cat /dev/null > '
 
 # git
 alias gc="git commit"
@@ -21,3 +22,5 @@ alias sg='script/generate'
 alias a='autospec'
 alias tlog='tail -f log/development.log'
 alias rst='touch tmp/restart.txt'
+alias dbug='rake restart DEBUG=true; rdebug -c'
+alias rr='rake routes'
