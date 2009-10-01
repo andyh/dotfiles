@@ -55,3 +55,4 @@ h2. Features
  * mategem for completing  and opening gems in TextMate
  * _authme_ command for adding servers to authorized_keys list
  * autospec/autotest growl notifications
+ * "hirb":http://github.com/cldwalker/hirb is enabled for Rails console sessions 
