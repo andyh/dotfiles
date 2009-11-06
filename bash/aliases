@@ -13,6 +13,8 @@ alias ga="git add"
 alias gb="git branch"
 alias gst="git status"
 alias gd="git diff"
+alias gdc="git diff --cached"
+alias gco="git checkout"
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset — %s %Cgreen(%cr)%Creset" --abbrev-commit --date=relative'
 
 # rails
