@@ -2,7 +2,7 @@ source ~/.tabtab.bash
 source ~/.bash-git-completion.sh
 
 authme() {
-	ssh $1 mkdir ~/.ssh
+	ssh $1 mkdir /home/andy/.ssh
 	ssh $1 'cat >>.ssh/authorized_keys' <~/.ssh/id_rsa.pub
 }
 
