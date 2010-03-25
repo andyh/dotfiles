@@ -1,11 +1,11 @@
 --- 
-:verbose: true
-gem:
+:benchmark: false
+gem: 
 :update_sources: true
 :bulk_threshold: 1000
+:verbose: true
+rdoc: --inline-source --line-numbers --format=html --template=hanna
 :sources: 
+- http://gemcutter.org
 - http://gems.rubyforge.org/
 - http://gems.github.com
-:benchmark: false
-:backtrace: false
-rdoc: --inline-source --line-numbers --format=html --template=hanna
