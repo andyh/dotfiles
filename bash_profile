@@ -10,3 +10,5 @@ fi
 if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
+
+if [[ -s /Users/andy/.rvm/scripts/rvm ]] ; then source /Users/andy/.rvm/scripts/rvm ; fi
