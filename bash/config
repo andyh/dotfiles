@@ -10,12 +10,23 @@ parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+smiley() {
+  if [ $? = 0 ]; then
+    printf $1
+  else
+    printf $2
+  fi
+  return $?
+}
+
 prompter() {
 	local RED="\[\033[0;31m\]"
 	local BLUE="\[\033[0;34m\]"
 	local NORM="\[\033[0m\]"
+	local GREEN="\[\033[01;32m\]"
+	local LIGHT_BLUE="\[\033[01;36m\]"
 
-	PS1="$BLUE\u:$NORM\w $RED\$(parse_git_branch)$NORM\$ "
+  PS1="$(smiley "$GREEN:)$NORM" "$RED:($NORM") $BLUE\W$NORM $LIGHT_BLUE[\$(rvm-prompt i v g)] $RED\$(parse_git_branch)$NORM\$ "
 }
 
 prompter
