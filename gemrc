@@ -4,7 +4,7 @@ gem:
 :update_sources: true
 :bulk_threshold: 1000
 :verbose: true
-rdoc: --inline-source --line-numbers --format=html --template=hanna
+rdoc: --inline-source --line-numbers
 :backtrace: false
 :sources: 
 - http://gemcutter.org
