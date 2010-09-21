@@ -26,3 +26,6 @@ alias tlog='tail -f log/development.log'
 alias rst='touch tmp/restart.txt'
 alias dbug='rake restart DEBUG=true; rdebug -c'
 alias rr='rake routes'
+
+# other
+alias mailplane='open -a Mailplane'
