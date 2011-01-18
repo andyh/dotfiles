@@ -1,5 +1,6 @@
 require 'autotest/growl'
 require 'autotest/fsevent' #osx specific file changed event notification
+require 'redgreen/autotest' unless ENV['RSPEC']
 
 Autotest::Growl::show_modified_files = true #which changes prompted the autospec run
 Autotest::Growl::remote_notification = true #networked growl, to work-around disappearing notifications
