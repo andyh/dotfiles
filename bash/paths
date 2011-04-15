@@ -1,4 +1,4 @@
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/Users/andy/.gem/ruby/1.8/bin:/opt/local/lib/postgresql84/bin:$PATH"
+export PATH="~/bin/:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/sbin:/Users/andy/.gem/ruby/1.8/bin:/opt/local/lib/postgresql84/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:/opt/local/share/man:/usr/local/git/man:$MANPATH"
 export INFOPATH=$INFOPATH:/opt/local/share/info
 export NODE_PATH="/usr/local/lib/node"
