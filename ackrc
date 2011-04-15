@@ -1,0 +1,6 @@
+--type-add=ruby=.haml
+--type-set=coffee=.coffee
+--type-add=css=.scss
+--type-set=plist=.plist
+--type-set=tmstuff=.tmproj
+--notmstuff
