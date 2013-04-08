@@ -139,7 +139,7 @@ nmap <leader>P PV`]=
 
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_height = 45
+let g:ctrlp_max_height = 5
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_switch_buffer = 2
