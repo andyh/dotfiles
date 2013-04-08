@@ -11,9 +11,9 @@
 [alias]
 	co = checkout
 [core]
-	editor = mate -w
 	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	excludesfile = /Users/andy/.gitignore_global
+  ignorecase = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
