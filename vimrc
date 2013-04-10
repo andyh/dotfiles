@@ -181,11 +181,10 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " Resize pane mappings.
-" note use of macmeta in gvimrc so meta/alt mappings work in macvim
-nnoremap <M-k> :resize +5<cr>
-nnoremap <M-j> :resize -5<cr>
-nnoremap <M-l> :vertical resize +5<cr>
-nnoremap <M-h> :vertical resize -5<cr>
+nnoremap <Home> :vertical resize +5<cr>
+nnoremap <End> :vertical resize -5<cr>
+nnoremap <PageUp> :resize +5<cr>
+nnoremap <PageDown> :resize -5<cr>
 
 " disable cursor keys in normal mode
 map <Left>  :echo "no!"<cr>

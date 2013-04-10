@@ -9,7 +9,6 @@ set guioptions-=r " no scrollbars
 
 if has("gui_macvim")
   set fuoptions=maxhorz,maxvert
-  set macmeta " so meta/alt mappings work in macvim
 endif
 
 if has("gui_running")
