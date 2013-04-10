@@ -16,8 +16,6 @@ Then edit to suit your needs.
 
 Note that I use Mac OS X and bash
 
-Requires DrNic's tabtab gem to be installed (_don't forget to run @install_tabtab@_)
-
 h3. Mategem
 
 Create this script in your path somewhere (_mine is in @/usr/local/bin@_)

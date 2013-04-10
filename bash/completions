@@ -1,4 +1,3 @@
-source ~/.tabtab.bash
 source ~/.bash-git-completion.sh
 
 authme() {
