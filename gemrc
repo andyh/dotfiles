@@ -7,6 +7,7 @@ gem: --no-ri --no-rdoc
 rdoc: --inline-source --line-numbers
 :backtrace: false
 :sources: 
+- https://rubygems.org
 - http://gemcutter.org
 - http://gems.rubyforge.org/
 - http://gems.github.com
