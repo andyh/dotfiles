@@ -94,6 +94,9 @@ set incsearch                     " incremental searching
 set ignorecase                    " searches are case insensitive...
 set smartcase                     " ... unless they contain at least one capital letter
 
+" Diffs
+set diffopt=filler,vertical       " Prefer vertical splits by default
+
 let mapleader=","
 
 function! s:setupWrapping()
