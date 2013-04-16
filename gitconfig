@@ -23,3 +23,5 @@
 
 [apply]
 	whitespace = nowarn
+[github]
+	user = andyh
