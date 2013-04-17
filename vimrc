@@ -128,6 +128,9 @@ if has("autocmd")
 
   " Indent p tags
   " au FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
+
+  " Make sure haml files are set correctly
+  au BufRead,BufNewFile *.haml set ft=haml
 endif
 
 " don't use Ex mode, use Q for formatting
