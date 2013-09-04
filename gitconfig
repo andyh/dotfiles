@@ -25,3 +25,5 @@
 	whitespace = nowarn
 [github]
 	user = andyh
+[pull]
+	rebase = true
