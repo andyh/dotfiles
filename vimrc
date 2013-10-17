@@ -61,6 +61,10 @@ runtime macros/matchit.vim
 syntax enable
 
 set number        " I like me some line numbers
+if v:version >= 704
+  set relativenumber  " also show relative line numbers,
+                      " enabling the hybrid number mode
+endif
 set ruler         " show the cursor position all the time
 set cursorline    " highlight the line of the cursor
 set showcmd       " show partial commands below the status line
