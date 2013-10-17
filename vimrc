@@ -165,7 +165,7 @@ let g:ctrlp_user_command = {
       \ 1: ['.git/', 'cd %s && git ls-files'],
       \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
       \ },
-      \ 'fallback': 'find %s -type f'
+      \ 'fallback': 'ag %s -l --nocolor -g ""'
       \ }
 map <leader>ft :CtrlPTag<cr>
 map <leader>fb :CtrlPBuffer<cr>
