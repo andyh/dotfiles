@@ -52,6 +52,8 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'ervandew/supertab'
 Bundle 'briancollins/vim-jst'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 " Bundle 'rodjek/vim-puppet'
 
 filetype plugin indent on
@@ -144,6 +146,18 @@ map Q gq
 
 " clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
+
+" map write
+map <leader>w :w<cr>
+
+"Dash Settings
+let g:dash_map = {
+    \ 'ruby': 'rails'
+    \ }
+
+" shortcut for looking up words in Dash
+nmap <silent> <leader>d <Plug>DashSearch
+nmap <silent> <leader>dg <Plug>DashGlobalSearch
 
 " paste lines from unnamed register and fix indentation
 nmap <leader>p pV`]=
