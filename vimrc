@@ -368,3 +368,20 @@ endfunction
 
 :map <leader>ct :Dispatch! ctags -R --languages=ruby --exclude=.git --exclude=log --extra=+f<cr>
 
+" Cleaning up crufty html using pandoc
+" From http://vimcasts.org/episodes/using-external-filter-commands-to-reformat-html/
+function! FormatprgLocal(filter)
+  if !empty(v:char)
+    return 1
+  else
+    let l:command = v:lnum.','.(v:lnum+v:count-1).'!'.a:filter
+    echo l:command
+    execute l:command
+  endif
+endfunction
+
+if has("autocmd")
+  let pandoc_pipeline  = "pandoc --from=html --to=markdown"
+  let pandoc_pipeline .= " | pandoc --from=markdown --to=html"
+  autocmd FileType html setlocal formatexpr=FormatprgLocal(pandoc_pipeline)
+endif
