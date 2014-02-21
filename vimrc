@@ -325,12 +325,27 @@ endfunction
 
 " =============== xmpfilter ========================
 " Ensure rcodetools gem is installed
-nmap <buffer> <leader>mr  <Plug>(xmpfilter-mark)
-xmap <buffer> <leader>mr  <Plug>(xmpfilter-mark)
-imap <buffer> <leader>mr  <Plug>(xmpfilter-mark)
-nmap <buffer> <leader>rr  <Plug>(xmpfilter-run)
-xmap <buffer> <leader>rr  <Plug>(xmpfilter-run)
-imap <buffer> <leader>rr  <Plug>(xmpfilter-run)
+" Ensure that seeing_is_believing gem is installed
+
+let g:xmpfilter_cmd = "seeing_is_believing"
+
+autocmd FileType ruby nmap <buffer> <leader>mr <Plug>(seeing_is_believing-mark)
+autocmd FileType ruby xmap <buffer> <leader>mr <Plug>(seeing_is_believing-mark)
+autocmd FileType ruby imap <buffer> <leader>mr <Plug>(seeing_is_believing-mark)
+
+autocmd FileType ruby nmap <buffer> <leader>rc <Plug>(seeing_is_believing-clean)
+autocmd FileType ruby xmap <buffer> <leader>rc <Plug>(seeing_is_believing-clean)
+autocmd FileType ruby imap <buffer> <leader>rc <Plug>(seeing_is_believing-clean)
+
+" xmpfilter compatible
+autocmd FileType ruby nmap <buffer> <leader>rr <Plug>(seeing_is_believing-run_-x)
+autocmd FileType ruby xmap <buffer> <leader>rr <Plug>(seeing_is_believing-run_-x)
+autocmd FileType ruby imap <buffer> <leader>rr <Plug>(seeing_is_believing-run_-x)
+
+" auto insert mark at appropriate spot.
+autocmd FileType ruby nmap <buffer> <leader>ra <Plug>(seeing_is_believing-run)
+autocmd FileType ruby xmap <buffer> <leader>ra <Plug>(seeing_is_believing-run)
+autocmd FileType ruby imap <buffer> <leader>ra <Plug>(seeing_is_believing-run)
 
 " edit this file
 map <silent> <leader>ev :e $MYVIMRC<cr>
