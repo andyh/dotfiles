@@ -55,6 +55,7 @@ Bundle 'briancollins/vim-jst'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'myusuf3/numbers.vim'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 
@@ -227,19 +228,8 @@ set directory=~/.vim/_temp      " where to put swap files.
 
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
-
-  " Start the status line
-  set statusline=%f\ %m\ %r
-
-  " Add fugitive
-  set statusline+=%{fugitive#statusline()}
-
-  " Finish the statusline
-  set statusline+=Line:%l/%L[%p%%]
-  set statusline+=Col:%v
-  set statusline+=Buf:#%n
-  set statusline+=[%b][0x%B]
 endif
+let g:airline_powerline_fonts = 1
 
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '|':'|' }
 let g:AutoCloseProtectedRegions = ["Character"]

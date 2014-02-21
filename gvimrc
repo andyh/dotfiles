@@ -1,4 +1,4 @@
-set guifont=Inconsolata:h18
+set guifont=Inconsolata\ for\ Powerline:h18
 set linespace=2
 set antialias
 
