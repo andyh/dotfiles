@@ -54,7 +54,7 @@ Bundle 'ervandew/supertab'
 Bundle 'briancollins/vim-jst'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
-" Bundle 'rodjek/vim-puppet'
+Bundle 'myusuf3/numbers.vim'
 
 filetype plugin indent on
 
@@ -63,10 +63,10 @@ runtime macros/matchit.vim
 syntax enable
 
 set number        " I like me some line numbers
-if v:version >= 704
-  set relativenumber  " also show relative line numbers,
-                      " enabling the hybrid number mode
-endif
+" Use numbers plugin for switching between relative and absolute numbers
+" if numbers show up where they shouldn't add them to this exclude list
+" let g:numbers_exclude = ['unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m']$
+
 set ruler         " show the cursor position all the time
 set cursorline    " highlight the line of the cursor
 set showcmd       " show partial commands below the status line
@@ -143,6 +143,10 @@ endif
 
 " don't use Ex mode, use Q for formatting
 map Q gq
+
+" toggling for numbers.vim
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
 
 " clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
