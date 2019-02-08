@@ -47,7 +47,7 @@ Bundle 'kurkale6ka/vim-swap'
 Bundle 't9md/vim-ruby-xmpfilter'
 Bundle 'UltiSnips'
 Bundle 'jgdavey/vim-blockle'
-Bundle 'Townk/vim-autoclose'
+" Bundle 'Townk/vim-autoclose'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'ervandew/supertab'
@@ -56,6 +56,8 @@ Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'bling/vim-airline'
+Bundle 'jodosha/vim-devnotes'
+Bundle 'junegunn/goyo.vim'
 
 filetype plugin indent on
 
@@ -168,24 +170,28 @@ nmap <silent> <leader>dg <Plug>DashGlobalSearch
 nmap <leader>p pV`]=
 nmap <leader>P PV`]=
 
+set grepprg=ag\ ==nogroup\ --nocolor
+
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_height = 5
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_switch_buffer = 2
-let g:ctrlp_working_path_mode = 2
+let g:ctrlp_working_path_mode = 0
 let g:ctrlp_mruf_include = '\.py$\|\.rb$|\.coffee|\.haml'
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript']
-let g:ctrlp_user_command = {
-      \ 'types': {
-      \ 1: ['.git/', 'cd %s && git ls-files'],
-      \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
-      \ },
-      \ 'fallback': 'ag %s -l --nocolor -g ""'
-      \ }
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+" let g:ctrlp_user_command = {
+"       \ 'types': {
+"       \ 1: ['.git/', 'cd %s && git ls-files'],
+"       \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
+"       \ },
+"       \ 'fallback': 'ag %s -l --nocolor -g ""'
+"       \ }
 map <leader>ft :CtrlPTag<cr>
 map <leader>fb :CtrlPBuffer<cr>
 
@@ -337,6 +343,9 @@ autocmd FileType ruby nmap <buffer> <leader>ra <Plug>(seeing_is_believing-run)
 autocmd FileType ruby xmap <buffer> <leader>ra <Plug>(seeing_is_believing-run)
 autocmd FileType ruby imap <buffer> <leader>ra <Plug>(seeing_is_believing-run)
 
+" Add '?' and '!' to the list of characters judged to be part of a keyword.
+autocmd FileType ruby set iskeyword=@,!,?,48-57,_,192-255
+
 " edit this file
 map <silent> <leader>ev :e $MYVIMRC<cr>
 
@@ -375,3 +384,38 @@ if has("autocmd")
   let pandoc_pipeline .= " | pandoc --from=markdown --to=html"
   autocmd FileType html setlocal formatexpr=FormatprgLocal(pandoc_pipeline)
 endif
+
+" Rails projections
+let g:rails_projections = {
+      \ "app/queries/*_query.rb": {
+      \   "command": "query",
+      \   "template":
+      \     "class %SQuery\nend",
+      \   "test": [
+      \     "test/unit/%s_query_test.rb",
+      \     "spec/queries/%s_query_spec.rb"
+      \   ],
+      \   "keywords": "query"
+      \ },
+      \ "app/uploaders/*_uploader.rb": {
+      \   "command": "uploader",
+      \   "template":
+      \     "class %SUploader < CarrierWave::Uploader::Base\nend",
+      \   "test": [
+      \     "test/unit/%s_uploader_test.rb",
+      \     "spec/models/%s_uploader_spec.rb"
+      \   ],
+      \   "keywords": "process version"
+      \ },
+      \ "app/policies/*_policy.rb": {
+      \   "command": "policy",
+      \   "template":
+      \     "class %SPolicy < ApplicationPolicy\nend",
+      \   "test": [
+      \     "test/unit/%s_policy_test.rb",
+      \     "spec/models/%s_policy_spec.rb"
+      \   ],
+      \   "keywords": "scope policy policy_scope"
+      \ },
+      \ "features/support/*.rb": {"command": "support"},
+      \ "features/support/env.rb": {"command": "support"}}
